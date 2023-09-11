@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Scaffold Color-->
+    <color name="primary_color">#808361</color>
+    <color name="primary_color_light">#C7BDB3</color>
+    <color name="primary_color_shade_1">#B7A78E</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey_shade1">#4A4947</color>
+    <color name="grey_shade2">#D6D8DA</color>
+
+    <color name="transparent_color">#00000000</color>
+</resources>
