@@ -1,9 +1,33 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:myapp/presentation/bloc/profile_setup_bloc/export.dart';
+import 'package:myapp/presentation/extension/inkwell_extension.dart';
+import 'package:myapp/presentation/screens/profile_setup/personal_setup/widgets/export.dart';
+
+import '../../../../gen/assets.gen.dart';
+import '../../../../gen/colors.gen.dart';
 import '../../../../utils.dart';
 import '../../../../widgets/spacer.dart';
 import '../../../export.dart';
+import 'dart:math' as math;
 
 class PersonalSetup extends StatelessWidget {
-  const PersonalSetup({Key? key}) : super(key: key);
+  PersonalSetup({Key? key}) : super(key: key);
+
+  final List<String> location = [
+    'Pakistan',
+    'United Arab Emirates',
+    'Saudi Arabia',
+  ];
+
+  final List<String> city = [
+    'Lahore',
+    'Sharjah',
+    'Makkah',
+  ];
+
+  final _selectedLocationFilter = 'Pakistan';
+  final _selectedCity = 'Lahore';
 
   @override
   Widget build(BuildContext context) {
@@ -20,39 +44,31 @@ class PersonalSetup extends StatelessWidget {
               child: RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
-                  style: SafeGoogleFont(
-                    'Poppins',
+                  style: textStyles.poppinsRegular.copyWith(
                     fontSize: sizes.fontRatio * 16,
-                    fontWeight: FontWeight.w400,
-                    color: const Color(0xff4a4947),
+                    color: ColorName.blackShade,
                   ),
                   children: [
                     TextSpan(
                       text: 'Join the ',
-                      style: SafeGoogleFont(
-                        'Poppins',
+                      style: textStyles.poppinsRegular.copyWith(
                         fontSize: sizes.fontRatio * 16,
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xff4a4947),
+                        color: ColorName.blackShade,
                       ),
                     ),
                     TextSpan(
                       text: 'inclusive community of Australian photographers',
-                      style: SafeGoogleFont(
-                        'Poppins',
+                      style: textStyles.poppinsRegular.copyWith(
                         fontSize: sizes.fontRatio * 16,
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xff808361),
+                        color: ColorName.primaryColor,
                       ),
                     ),
                     TextSpan(
                       text:
                           ' who are banding together to build and maintain the integrity of the profession',
-                      style: SafeGoogleFont(
-                        'Poppins',
+                      style: textStyles.poppinsRegular.copyWith(
                         fontSize: sizes.fontRatio * 16,
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xff4a4947),
+                        color: ColorName.blackShade,
                       ),
                     ),
                   ],
@@ -60,36 +76,29 @@ class PersonalSetup extends StatelessWidget {
               ),
             ),
           ),
-          verticalSpacer(12),
+          verticalSpacer(32),
           IntrinsicHeight(
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-              ),
-              child: Text(
-                'Upload Photo',
-                textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
-                  fontSize: sizes.fontRatio * 16,
-                  fontWeight: FontWeight.w500,
-                  color: const Color(0xff808361),
+            child: Column(
+              children: [
+                const InkWell().inkWellRippleEffect(
+                  onTap: () => ImageSelectionBottomSheet.show(
+                    context: context,
+                  ),
+                  child: Image.asset(
+                    'assets/page-1/images/button-upload-profile-pic.png',
+                    width: sizes.widthRatio * 100,
+                    height: sizes.heightRatio * 100,
+                  ),
                 ),
-              ),
-            ),
-          ),
-          IntrinsicHeight(
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-              ),
-              child: Image.asset(
-                'assets/page-1/images/button-upload-profile-pic.png',
-                width: sizes.widthRatio * 100,
-                height: sizes.heightRatio * 100,
-              ),
+                Text(
+                  'Upload Photo',
+                  textAlign: TextAlign.center,
+                  style: textStyles.poppinsMedium.copyWith(
+                    fontSize: sizes.fontRatio * 16,
+                    color: ColorName.primaryColor,
+                  ),
+                ),
+              ],
             ),
           ),
           IntrinsicHeight(
@@ -116,16 +125,14 @@ class PersonalSetup extends StatelessWidget {
                       children: [
                         Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: horizontalValue(16),
+                            horizontal: horizontalValue(6),
                             vertical: verticalValue(6),
                           ),
                           child: Text(
                             'Personal Information',
-                            style: SafeGoogleFont(
-                              'Quincy CF',
-                              fontSize: sizes.fontRatio * 16,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xff25282b),
+                            style: textStyles.quincyCFMedium.copyWith(
+                              fontSize: sizes.fontRatio * 18,
+                              color: ColorName.blackShade,
                             ),
                           ),
                         ),
@@ -153,14 +160,11 @@ class PersonalSetup extends StatelessWidget {
                                     ),
                                     hintText: 'First Name',
                                     hintStyle: const TextStyle(
-                                      color: Color(0xff9f958b),
+                                      color: ColorName.hintTextShade,
                                     ),
                                   ),
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
@@ -169,7 +173,7 @@ class PersonalSetup extends StatelessWidget {
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
-                                  color: const Color(0xffdddad2),
+                                  color: ColorName.textFieldShade,
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
@@ -184,53 +188,89 @@ class PersonalSetup extends StatelessWidget {
                                     ),
                                     hintText: 'Last Name',
                                     hintStyle: const TextStyle(
-                                      color: Color(0xff9f958b),
+                                      color: ColorName.hintTextShade,
                                     ),
                                   ),
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
                               verticalSpacer(16),
                               Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: horizontalValue(16),
-                                  vertical: verticalValue(8),
-                                ),
                                 width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: const Color(0xffdddad2),
+                                padding: EdgeInsets.only(
+                                  right: horizontalValue(8),
                                 ),
-                                child: DropdownButton<String?>(
-                                  value: 'Item1',
-                                  onChanged: (String? newValue) {},
-                                  items: const [
-                                    DropdownMenuItem<String>(
-                                      value: 'Item1',
-                                      child: Text('Item1'),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: ColorName.textFieldShade,
+                                ),
+                                child: DropdownButtonHideUnderline(
+                                  child: DropdownButton2(
+                                    style: textStyles.poppinsRegular.copyWith(
+                                      fontSize: sizes.fontRatio * 16,
                                     ),
-                                    DropdownMenuItem<String>(
-                                      value: 'Item2',
-                                      child: Text('Item2'),
+                                    iconStyleData: IconStyleData(
+                                      icon: SvgPicture.asset(
+                                        Assets.svg.icArrowDown,
+                                        color: ColorName.black,
+                                      ),
+                                      openMenuIcon: Transform.rotate(
+                                        angle: -math.pi,
+                                        child: SvgPicture.asset(
+                                          Assets.svg.icArrowDown,
+                                          color: ColorName.black,
+                                        ),
+                                      ),
                                     ),
-                                    DropdownMenuItem<String>(
-                                      value: 'Item3',
-                                      child: Text('Item3'),
+                                    isExpanded: false,
+                                    hint: Text(
+                                      'Experience Level',
+                                      style: textStyles.poppinsRegular.copyWith(
+                                        fontSize: sizes.fontRatio * 10,
+                                      ),
                                     ),
-                                    DropdownMenuItem<String>(
-                                      value: 'Item4',
-                                      child: Text('Item4'),
-                                    ),
-                                    DropdownMenuItem<String>(
-                                      value: 'Item5',
-                                      child: Text('Item5'),
-                                    ),
-                                  ],
+                                    selectedItemBuilder:
+                                        (BuildContext context) {
+                                      return location
+                                          .map(
+                                            (item) => DropdownMenuItem<String>(
+                                              value: item,
+                                              child: Text(
+                                                item,
+                                                style: textStyles.poppinsRegular
+                                                    .copyWith(
+                                                  fontSize:
+                                                      sizes.fontRatio * 16,
+                                                  color:
+                                                      ColorName.hintTextShade,
+                                                ),
+                                                overflow: TextOverflow.ellipsis,
+                                              ),
+                                            ),
+                                          )
+                                          .toList();
+                                    },
+                                    items: location
+                                        .map(
+                                          (item) => DropdownMenuItem<String>(
+                                            value: item,
+                                            child: Text(
+                                              item,
+                                              style: textStyles.poppinsRegular
+                                                  .copyWith(
+                                                fontSize: sizes.fontRatio * 16,
+                                                color: ColorName.hintTextShade,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
+                                        )
+                                        .toList(),
+                                    value: _selectedLocationFilter,
+                                    onChanged: (value) {},
+                                  ),
                                 ),
                               ),
                             ],
@@ -242,7 +282,7 @@ class PersonalSetup extends StatelessWidget {
                   verticalSpacer(16),
                   Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: horizontalValue(16),
+                      horizontal: horizontalValue(8),
                       vertical: verticalValue(8),
                     ),
                     width: double.infinity,
@@ -255,16 +295,14 @@ class PersonalSetup extends StatelessWidget {
                       children: [
                         Container(
                           margin: EdgeInsets.symmetric(
-                            horizontal: horizontalValue(16),
+                            horizontal: horizontalValue(4),
                             vertical: verticalValue(8),
                           ),
                           child: Text(
                             'Contact Information',
-                            style: SafeGoogleFont(
-                              'Quincy CF',
-                              fontSize: sizes.fontRatio * 16,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xff25282b),
+                            style: textStyles.quincyCFMedium.copyWith(
+                              fontSize: sizes.fontRatio * 18,
+                              color: ColorName.blackShade,
                             ),
                           ),
                         ),
@@ -292,14 +330,11 @@ class PersonalSetup extends StatelessWidget {
                                     ),
                                     hintText: 'Email Address',
                                     hintStyle: const TextStyle(
-                                      color: Color(0xff9f958b),
+                                      color: ColorName.hintTextShade,
                                     ),
                                   ),
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
@@ -323,149 +358,88 @@ class PersonalSetup extends StatelessWidget {
                                     ),
                                     hintText: 'Phone Number',
                                     hintStyle: const TextStyle(
-                                      color: Color(0xff9f958b),
+                                      color: ColorName.hintTextShade,
                                     ),
                                   ),
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
                               verticalSpacer(16),
                               Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: horizontalValue(16),
-                                  vertical: verticalValue(6),
-                                ),
                                 width: double.infinity,
+                                padding: EdgeInsets.only(
+                                  right: horizontalValue(8),
+                                ),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: const Color(0xffdddad2),
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: ColorName.textFieldShade,
                                 ),
-                                child: DropdownButton<String?>(
-                                  value: 'Item1',
-                                  onChanged: (String? newValue) {},
-                                  items: const [
-                                    DropdownMenuItem<String>(
-                                      value: 'Item1',
-                                      child: Text('Item1'),
+                                child: DropdownButtonHideUnderline(
+                                  child: DropdownButton2(
+                                    style: textStyles.poppinsRegular.copyWith(
+                                      fontSize: sizes.fontRatio * 16,
                                     ),
-                                    DropdownMenuItem<String>(
-                                      value: 'Item2',
-                                      child: Text('Item2'),
-                                    ),
-                                    DropdownMenuItem<String>(
-                                      value: 'Item3',
-                                      child: Text('Item3'),
-                                    ),
-                                    DropdownMenuItem<String>(
-                                      value: 'Item4',
-                                      child: Text('Item4'),
-                                    ),
-                                    DropdownMenuItem<String>(
-                                      value: 'Item5',
-                                      child: Text('Item5'),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  verticalSpacer(16),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: horizontalValue(16),
-                      vertical: verticalValue(8),
-                    ),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: const Color(0xfffbf7f4),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                            horizontal: horizontalValue(16),
-                            vertical: verticalValue(8),
-                          ),
-                          child: Text(
-                            'Photography Status',
-                            style: SafeGoogleFont(
-                              'Quincy CF',
-                              fontSize: sizes.fontRatio * 16,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xff25282b),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: double.infinity,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.symmetric(
-                                  vertical: verticalValue(8),
-                                ),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                  child: Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
-                                      color: const Color(0xffdddad2),
-                                    ),
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        focusedBorder: InputBorder.none,
-                                        enabledBorder: InputBorder.none,
-                                        errorBorder: InputBorder.none,
-                                        disabledBorder: InputBorder.none,
-                                        contentPadding: EdgeInsets.symmetric(
-                                          horizontal: horizontalValue(16),
-                                          vertical: verticalValue(4),
+                                    iconStyleData: IconStyleData(
+                                      icon: SvgPicture.asset(
+                                        Assets.svg.icArrowDown,
+                                        color: ColorName.black,
+                                      ),
+                                      openMenuIcon: Transform.rotate(
+                                        angle: -math.pi,
+                                        child: SvgPicture.asset(
+                                          Assets.svg.icArrowDown,
+                                          color: ColorName.black,
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    color: const Color(0xffdddad2),
-                                  ),
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      errorBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      contentPadding: EdgeInsets.symmetric(
-                                        horizontal: horizontalValue(16),
-                                        vertical: verticalValue(4),
+                                    isExpanded: false,
+                                    hint: Text(
+                                      'City',
+                                      style: textStyles.poppinsRegular.copyWith(
+                                        fontSize: sizes.fontRatio * 10,
                                       ),
                                     ),
+                                    selectedItemBuilder:
+                                        (BuildContext context) {
+                                      return city
+                                          .map(
+                                            (item) => DropdownMenuItem<String>(
+                                              value: item,
+                                              child: Text(
+                                                item,
+                                                style: textStyles.poppinsRegular
+                                                    .copyWith(
+                                                  fontSize:
+                                                      sizes.fontRatio * 16,
+                                                  color:
+                                                      ColorName.hintTextShade,
+                                                ),
+                                                overflow: TextOverflow.ellipsis,
+                                              ),
+                                            ),
+                                          )
+                                          .toList();
+                                    },
+                                    items: city
+                                        .map(
+                                          (item) => DropdownMenuItem<String>(
+                                            value: item,
+                                            child: Text(
+                                              item,
+                                              style: textStyles.poppinsRegular
+                                                  .copyWith(
+                                                fontSize: sizes.fontRatio * 16,
+                                                color: ColorName.hintTextShade,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
+                                        )
+                                        .toList(),
+                                    value: _selectedCity,
+                                    onChanged: (value) {},
                                   ),
                                 ),
                               ),
@@ -490,17 +464,187 @@ class PersonalSetup extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
+                          margin: EdgeInsets.symmetric(
+                            horizontal: horizontalValue(4),
+                            vertical: verticalValue(8),
+                          ),
+                          child: Text(
+                            'Photography Status',
+                            style: textStyles.quincyCFMedium.copyWith(
+                              fontSize: sizes.fontRatio * 18,
+                              color: ColorName.blackShade,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child:
+                              BlocBuilder<ProfileSetupBloc, ProfileSetupState>(
+                            builder: (context, profileSetupState) {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const InkWell().inkWellRippleEffect(
+                                    onTap: () =>
+                                        context.read<ProfileSetupBloc>().add(
+                                              OnEnthusiastTapEvent(
+                                                value: !profileSetupState
+                                                    .iAmAnEnthusiast,
+                                              ),
+                                            ),
+                                    child: Container(
+                                      margin: EdgeInsets.symmetric(
+                                        horizontal: horizontalValue(2),
+                                      ),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: horizontalValue(10),
+                                        vertical: verticalValue(10),
+                                      ),
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(16),
+                                        color: ColorName.textFieldShade,
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            height: sizes.heightRatio * 18,
+                                            width: sizes.widthRatio * 18,
+                                            decoration: BoxDecoration(
+                                              color: ColorName.transparentColor,
+                                              border: Border.all(
+                                                  color: ColorName.blackShade),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: profileSetupState
+                                                    .iAmAnEnthusiast
+                                                ? Container(
+                                                    margin:
+                                                        EdgeInsets.symmetric(
+                                                      horizontal:
+                                                          horizontalValue(4),
+                                                      vertical:
+                                                          verticalValue(4),
+                                                    ),
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                      color: ColorName
+                                                          .primaryColor,
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                  )
+                                                : const SizedBox.shrink(),
+                                          ),
+                                          horizontalSpacer(12),
+                                          Text(
+                                            'I am an Enthusiast',
+                                            style: textStyles.poppinsRegular
+                                                .copyWith(
+                                              fontSize: sizes.fontRatio * 16,
+                                              color: ColorName.greyShade1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  verticalSpacer(16),
+                                  const InkWell().inkWellRippleEffect(
+                                    onTap: () =>
+                                        context.read<ProfileSetupBloc>().add(
+                                              OnProfessionalPhotographerTapEvent(
+                                                value: !profileSetupState
+                                                    .iAmAProfessionalPhotographer,
+                                              ),
+                                            ),
+                                    child: Container(
+                                      margin: EdgeInsets.symmetric(
+                                        horizontal: horizontalValue(2),
+                                      ),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: horizontalValue(10),
+                                        vertical: verticalValue(10),
+                                      ),
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(16),
+                                        color: ColorName.textFieldShade,
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            height: sizes.heightRatio * 18,
+                                            width: sizes.widthRatio * 18,
+                                            decoration: BoxDecoration(
+                                              color: ColorName.transparentColor,
+                                              border: Border.all(
+                                                  color: ColorName.blackShade),
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: profileSetupState
+                                                    .iAmAProfessionalPhotographer
+                                                ? Container(
+                                                    margin:
+                                                        EdgeInsets.symmetric(
+                                                      horizontal:
+                                                          horizontalValue(4),
+                                                      vertical:
+                                                          verticalValue(4),
+                                                    ),
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                      color: ColorName
+                                                          .primaryColor,
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                  )
+                                                : const SizedBox.shrink(),
+                                          ),
+                                          horizontalSpacer(12),
+                                          Text(
+                                            'I am a Professional Photographer',
+                                            style: textStyles.poppinsRegular
+                                                .copyWith(
+                                              fontSize: sizes.fontRatio * 16,
+                                              color: ColorName.greyShade1,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  verticalSpacer(16),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: horizontalValue(8),
+                      vertical: verticalValue(8),
+                    ),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: const Color(0xfffbf7f4),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: horizontalValue(16),
+                            horizontal: horizontalValue(4),
                             vertical: verticalValue(6),
                           ),
                           child: Text(
                             'Social Information',
-                            style: SafeGoogleFont(
-                              'Quincy CF',
-                              fontSize: sizes.fontRatio * 16,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xff25282b),
+                            style: textStyles.quincyCFMedium.copyWith(
+                              fontSize: sizes.fontRatio * 18,
+                              color: ColorName.blackShade,
                             ),
                           ),
                         ),
@@ -528,13 +672,11 @@ class PersonalSetup extends StatelessWidget {
                                     ),
                                     hintText: 'Facebook Link',
                                     hintStyle: const TextStyle(
-                                        color: Color(0xff9f958b)),
+                                      color: ColorName.hintTextShade,
+                                    ),
                                   ),
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
@@ -558,13 +700,11 @@ class PersonalSetup extends StatelessWidget {
                                     ),
                                     hintText: 'Instagram Handle',
                                     hintStyle: const TextStyle(
-                                        color: Color(0xff9f958b)),
+                                      color: ColorName.hintTextShade,
+                                    ),
                                   ),
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
@@ -588,13 +728,11 @@ class PersonalSetup extends StatelessWidget {
                                     ),
                                     hintText: 'X Handle',
                                     hintStyle: const TextStyle(
-                                        color: Color(0xff9f958b)),
+                                      color: ColorName.hintTextShade,
+                                    ),
                                   ),
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
@@ -618,13 +756,11 @@ class PersonalSetup extends StatelessWidget {
                                     ),
                                     hintText: 'Website link',
                                     hintStyle: const TextStyle(
-                                        color: Color(0xff9f958b)),
+                                      color: ColorName.hintTextShade,
+                                    ),
                                   ),
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),

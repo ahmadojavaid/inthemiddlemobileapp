@@ -50,11 +50,9 @@ class ViewApplicantsScreen extends StatelessWidget {
                     Text(
                       'Applicants',
                       textAlign: TextAlign.center,
-                      style: SafeGoogleFont(
-                        'Poppins',
+                      style: textStyles.poppinsBold.copyWith(
                         fontSize: sizes.fontRatio * 20,
-                        fontWeight: FontWeight.w600,
-                        color: ColorName.black,
+                        color: ColorName.greyShade1,
                       ),
                     ),
                     const Spacer(),
@@ -101,30 +99,18 @@ class ViewApplicantsScreen extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(
-                                      width: sizes.widthRatio * 70,
-                                      height: sizes.heightRatio * 20,
-                                      child: Text(
-                                        'Jane Doe',
-                                        style: SafeGoogleFont(
-                                          'Poppins',
-                                          fontSize: sizes.fontRatio * 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: const Color(0xff4a4947),
-                                        ),
+                                    Text(
+                                      'Jane Doe',
+                                      style: textStyles.poppinsBold.copyWith(
+                                        fontSize: sizes.fontRatio * 18,
+                                        color: ColorName.blackShade,
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: sizes.widthRatio * 169,
-                                      height: sizes.heightRatio * 21,
-                                      child: Text(
-                                        'Associate Photographer',
-                                        style: SafeGoogleFont(
-                                          'Poppins',
-                                          fontSize: sizes.fontRatio * 14,
-                                          fontWeight: FontWeight.w400,
-                                          color: const Color(0xff4a4947),
-                                        ),
+                                    Text(
+                                      'Associate Photographer',
+                                      style: textStyles.poppinsRegular.copyWith(
+                                        fontSize: sizes.fontRatio * 16,
+                                        color: ColorName.greyShade1,
                                       ),
                                     ),
                                   ],
@@ -147,29 +133,25 @@ class ViewApplicantsScreen extends StatelessWidget {
                                 children: [
                                   RichText(
                                     text: TextSpan(
-                                      style: SafeGoogleFont(
-                                        'Poppins',
+                                      style: textStyles.poppinsRegular.copyWith(
                                         fontSize: sizes.fontRatio * 16,
-                                        fontWeight: FontWeight.w400,
-                                        color: const Color(0xff4a4947),
+                                        color: ColorName.greyShade1,
                                       ),
                                       children: [
                                         TextSpan(
                                           text: 'Email\n',
-                                          style: SafeGoogleFont(
-                                            'Poppins',
+                                          style:
+                                              textStyles.poppinsBold.copyWith(
                                             fontSize: sizes.fontRatio * 16,
-                                            fontWeight: FontWeight.bold,
-                                            color: const Color(0xff9d9890),
+                                            color: ColorName.primaryColor,
                                           ),
                                         ),
                                         TextSpan(
                                           text: 'janedoe@company.com',
-                                          style: SafeGoogleFont(
-                                            'Poppins',
-                                            fontSize: sizes.fontRatio * 16,
-                                            fontWeight: FontWeight.w400,
-                                            color: const Color(0xff4a4947),
+                                          style: textStyles.poppinsRegular
+                                              .copyWith(
+                                            fontSize: sizes.fontRatio * 17,
+                                            color: ColorName.greyShade1,
                                           ),
                                         ),
                                       ],
@@ -180,12 +162,12 @@ class ViewApplicantsScreen extends StatelessWidget {
                                     width: double.infinity,
                                     height: 1,
                                     color:
-                                    ColorName.primaryColor.withOpacity(0.7),
+                                        ColorName.primaryColor.withOpacity(0.7),
                                   ),
                                   verticalSpacer(8),
                                   Row(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       RichText(
                                         text: TextSpan(
@@ -198,20 +180,18 @@ class ViewApplicantsScreen extends StatelessWidget {
                                           children: [
                                             TextSpan(
                                               text: 'Phone\n',
-                                              style: SafeGoogleFont(
-                                                'Poppins',
+                                              style: textStyles.poppinsBold
+                                                  .copyWith(
                                                 fontSize: sizes.fontRatio * 16,
-                                                fontWeight: FontWeight.bold,
-                                                color: const Color(0xff9d9890),
+                                                color: ColorName.primaryColor,
                                               ),
                                             ),
                                             TextSpan(
                                               text: '451 542 5487',
-                                              style: SafeGoogleFont(
-                                                'Poppins',
-                                                fontSize: sizes.fontRatio * 16,
-                                                fontWeight: FontWeight.w400,
-                                                color: const Color(0xff4a4947),
+                                              style: textStyles.poppinsRegular
+                                                  .copyWith(
+                                                fontSize: sizes.fontRatio * 17,
+                                                color: ColorName.greyShade1,
                                               ),
                                             ),
                                           ],
@@ -236,20 +216,18 @@ class ViewApplicantsScreen extends StatelessWidget {
                                           children: [
                                             TextSpan(
                                               text: 'Location\n',
-                                              style: SafeGoogleFont(
-                                                'Poppins',
+                                              style: textStyles.poppinsBold
+                                                  .copyWith(
                                                 fontSize: sizes.fontRatio * 16,
-                                                fontWeight: FontWeight.bold,
-                                                color: const Color(0xff9d9890),
+                                                color: ColorName.primaryColor,
                                               ),
                                             ),
                                             TextSpan(
                                               text: 'Brisbane',
-                                              style: SafeGoogleFont(
-                                                'Poppins',
-                                                fontSize: sizes.fontRatio * 16,
-                                                fontWeight: FontWeight.w400,
-                                                color: const Color(0xff4a4947),
+                                              style: textStyles.poppinsRegular
+                                                  .copyWith(
+                                                fontSize: sizes.fontRatio * 17,
+                                                color: ColorName.greyShade1,
                                               ),
                                             ),
                                           ],
@@ -263,7 +241,7 @@ class ViewApplicantsScreen extends StatelessWidget {
                                     width: double.infinity,
                                     height: 1,
                                     color:
-                                    ColorName.primaryColor.withOpacity(0.7),
+                                        ColorName.primaryColor.withOpacity(0.7),
                                   ),
                                   verticalSpacer(16),
                                   RichText(
@@ -277,20 +255,18 @@ class ViewApplicantsScreen extends StatelessWidget {
                                       children: [
                                         TextSpan(
                                           text: 'Photography Status\n',
-                                          style: SafeGoogleFont(
-                                            'Poppins',
+                                          style:
+                                              textStyles.poppinsBold.copyWith(
                                             fontSize: sizes.fontRatio * 16,
-                                            fontWeight: FontWeight.bold,
-                                            color: const Color(0xff9d9890),
+                                            color: ColorName.primaryColor,
                                           ),
                                         ),
                                         TextSpan(
                                           text: 'Enthusiast',
-                                          style: SafeGoogleFont(
-                                            'Poppins',
-                                            fontSize: sizes.fontRatio * 16,
-                                            fontWeight: FontWeight.w400,
-                                            color: const Color(0xff4a4947),
+                                          style: textStyles.poppinsRegular
+                                              .copyWith(
+                                            fontSize: sizes.fontRatio * 17,
+                                            color: ColorName.greyShade1,
                                           ),
                                         ),
                                       ],
@@ -329,10 +305,9 @@ class ViewApplicantsScreen extends StatelessWidget {
                                         child: Text(
                                           'Send Message'.toUpperCase(),
                                           textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Poppins',
+                                          style:
+                                              textStyles.poppinsMedium.copyWith(
                                             fontSize: sizes.fontRatio * 18,
-                                            fontWeight: FontWeight.w500,
                                             color: ColorName.white,
                                           ),
                                         ),

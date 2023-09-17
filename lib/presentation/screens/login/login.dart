@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/gen/colors.gen.dart';
 import 'package:myapp/presentation/app_routes/app_routes.dart';
+import 'package:myapp/presentation/extension/inkwell_extension.dart';
 import 'package:myapp/presentation/extension/stack_extension.dart';
-import 'dart:ui';
-import 'package:myapp/utils.dart';
 import 'package:myapp/widgets/spacer.dart';
 
 import '../../res/res.dart';
@@ -13,9 +13,6 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 390;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
@@ -31,35 +28,35 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                verticalSpacer(150),
+                verticalSpacer(100),
                 Text(
                   'Welcome Back!',
                   textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Quincy CF',
-                    fontSize: sizes.fontRatio * 22,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xff25282b),
+                  style: textStyles.quincyCFMedium.copyWith(
+                    fontSize: sizes.fontRatio * 34,
                   ),
                 ),
                 verticalSpacer(16),
-                Text(
-                  'Don’t miss out in the middle of where it’s happening',
-                  textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: sizes.fontRatio * 18,
-                    fontWeight: FontWeight.w400,
-                    color: const Color(0xff4a4947),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: horizontalValue(40),
+                  ),
+                  child: Text(
+                    'Don’t miss out in the middle of where it’s happening',
+                    textAlign: TextAlign.center,
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 18,
+                    ),
                   ),
                 ),
+                verticalSpacer(16),
                 Container(
                   margin: EdgeInsets.symmetric(
                     horizontal: horizontalValue(16),
                     vertical: verticalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -74,14 +71,12 @@ class LoginScreen extends StatelessWidget {
                         vertical: verticalValue(10),
                       ),
                       hintText: 'Email Address',
-                      hintStyle: const TextStyle(color: Color(0xff9f958b)),
+                      hintStyle: const TextStyle(
+                        color: Color(0xff9f958b),
+                      ),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
@@ -90,7 +85,7 @@ class LoginScreen extends StatelessWidget {
                     horizontal: horizontalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -108,109 +103,86 @@ class LoginScreen extends StatelessWidget {
                       hintText: 'Password',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(
-                    187 * fem,
-                    0 * fem,
-                    0 * fem,
-                    40 * fem,
+                verticalSpacer(10),
+                const InkWell().inkWellRippleEffect(
+                  onTap: () => Navigator.pushNamed(
+                    context,
+                    AppRoutes.forgotPassword,
                   ),
-                  child: TextButton(
-                    onPressed: () => Navigator.pushNamed(
-                      context,
-                      AppRoutes.forgotPassword,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(
+                      horizontal: horizontalValue(20),
                     ),
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Text(
-                      'Forgot Password?',
-                      textAlign: TextAlign.right,
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 15 * ffem,
-                        fontWeight: FontWeight.w600,
-                        height: 1.5 * ffem / fem,
-                        color: const Color(0xff808361),
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Forgot Password?',
+                          textAlign: TextAlign.right,
+                          style: textStyles.poppinsMedium.copyWith(
+                            fontSize: sizes.fontRatio * 16,
+                            color: ColorName.primaryColor,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(
-                    91 * fem,
-                    0 * fem,
-                    110 * fem,
-                    30 * fem,
+                verticalSpacer(40),
+                const InkWell().inkWellRippleEffect(
+                  onTap: () => Navigator.pushReplacementNamed(
+                    context,
+                    AppRoutes.profileSetup,
                   ),
-                  child: InkWell(
-                    onTap: () => Navigator.pushReplacementNamed(
-                      context,
-                      AppRoutes.profileSetup,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      vertical: verticalValue(8),
                     ),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        vertical: verticalValue(8),
-                      ),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: const Color(0xff808361),
-                        borderRadius: BorderRadius.circular(22 * fem),
-                      ),
+                    margin: EdgeInsets.symmetric(
+                      horizontal: sizes.width * 0.28,
+                    ),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff808361),
+                      borderRadius: BorderRadius.circular(22),
+                    ),
+                    child: Center(
                       child: Center(
-                        child: Center(
-                          child: Text(
-                            'SIGN IN',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5 * ffem / fem,
-                              color: const Color(0xffffffff),
-                            ),
+                        child: Text(
+                          'SIGN IN',
+                          textAlign: TextAlign.center,
+                          style: textStyles.poppinsMedium.copyWith(
+                            fontSize: sizes.fontRatio * 18,
+                            color: ColorName.white,
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Container(
-                  margin:
-                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 20 * fem, 0 * fem),
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
+                verticalSpacer(30),
+                const InkWell().inkWellRippleEffect(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: horizontalValue(16),
                     ),
                     child: RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                        style: SafeGoogleFont(
-                          'Fira Sans',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2 * ffem / fem,
-                          color: const Color(0xff4a4947),
+                        style: textStyles.poppinsMedium.copyWith(
+                          fontSize: sizes.fontRatio * 16,
                         ),
                         children: [
                           TextSpan(
                             text: 'Don’t have an account? ',
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.5 * ffem / fem,
-                              color: const Color(0xff4a4947),
+                            style: textStyles.poppinsMedium.copyWith(
+                              fontSize: sizes.fontRatio * 16,
+                              color: ColorName.primaryColor,
                             ),
                           ),
                           TextSpan(
@@ -220,18 +192,16 @@ class LoginScreen extends StatelessWidget {
                                     context,
                                     AppRoutes.register,
                                   ),
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.5 * ffem / fem,
-                              color: const Color(0xff808361),
+                            style: textStyles.poppinsBold.copyWith(
+                              fontSize: sizes.fontRatio * 16,
+                              color: ColorName.primaryColor,
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
+                  onTap: () {},
                 ),
               ],
             ),

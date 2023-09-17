@@ -68,11 +68,9 @@ class DeleteWidget extends StatelessWidget {
                   Text(
                     'Delete',
                     textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Poppins',
+                    style: textStyles.quincyCFBlack.copyWith(
                       fontSize: sizes.fontRatio * 20,
-                      fontWeight: FontWeight.w600,
-                      color: ColorName.black,
+                      color: ColorName.blackShade,
                     ),
                   ),
                   const Spacer(),
@@ -97,11 +95,9 @@ class DeleteWidget extends StatelessWidget {
             Text(
               'Are you sure you want to delete this job?',
               textAlign: TextAlign.center,
-              style: SafeGoogleFont(
-                'Poppins',
-                fontSize: sizes.fontRatio * 18,
-                fontWeight: FontWeight.w600,
-                color: ColorName.black,
+              style: textStyles.poppinsMedium.copyWith(
+                fontSize: sizes.fontRatio * 16,
+                color: ColorName.blackShade,
               ),
             ),
             verticalSpacer(16),
@@ -150,10 +146,8 @@ class DeleteWidget extends StatelessWidget {
                               child: Text(
                                 'YES',
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Poppins',
-                                  fontSize: sizes.fontRatio * 18,
-                                  fontWeight: FontWeight.w400,
+                                style: textStyles.poppinsMedium.copyWith(
+                                  fontSize: sizes.fontRatio * 16,
                                   color: ColorName.white,
                                 ),
                               ),
@@ -195,10 +189,8 @@ class DeleteWidget extends StatelessWidget {
                                 child: Text(
                                   'NO',
                                   textAlign: TextAlign.center,
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 18,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsMedium.copyWith(
+                                    fontSize: sizes.fontRatio * 16,
                                     color: ColorName.white,
                                   ),
                                 ),

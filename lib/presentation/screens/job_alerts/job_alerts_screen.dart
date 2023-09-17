@@ -58,57 +58,45 @@ class JobAlertsScreen extends StatelessWidget {
                           child: RichText(
                             textAlign: TextAlign.center,
                             text: TextSpan(
-                              style: SafeGoogleFont(
-                                'Poppins',
+                              style: textStyles.poppinsRegular.copyWith(
+                                color: ColorName.blackShade,
                                 fontSize: sizes.fontRatio * 16,
-                                fontWeight: FontWeight.w400,
-                                color: ColorName.white,
                               ),
                               children: [
                                 TextSpan(
                                   text: 'Showcase',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsRegular.copyWith(
                                     color: ColorName.white,
+                                    fontSize: sizes.fontRatio * 16,
                                   ),
                                 ),
                                 TextSpan(
                                   text: ' ',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsRegular.copyWith(
                                     color: ColorName.white,
+                                    fontSize: sizes.fontRatio * 16,
                                   ),
                                 ),
                                 TextSpan(
                                   text: 'your talent',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsRegular.copyWith(
                                     color: ColorName.primaryColor,
+                                    fontSize: sizes.fontRatio * 16,
                                   ),
                                 ),
                                 TextSpan(
                                   text: ' ',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
+                                    color: ColorName.primaryColor,
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.white,
                                   ),
                                 ),
                                 TextSpan(
                                   text:
                                       'behind the lens by adding your portfolio...',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsRegular.copyWith(
                                     color: ColorName.white,
+                                    fontSize: sizes.fontRatio * 16,
                                   ),
                                 ),
                               ],
@@ -149,11 +137,9 @@ class JobAlertsScreen extends StatelessWidget {
                             Text(
                               'Job Alerts',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Poppins',
+                              style: textStyles.poppinsBold.copyWith(
+                                color: ColorName.blackShade,
                                 fontSize: sizes.fontRatio * 20,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black,
                               ),
                             ),
                             const Spacer(),
@@ -187,11 +173,8 @@ class JobAlertsScreen extends StatelessWidget {
                         children: [
                           Text(
                             'Selected Cities',
-                            style: SafeGoogleFont(
-                              'Quincy CF',
-                              fontSize: sizes.fontRatio * 20,
-                              fontWeight: FontWeight.bold,
-                              color: const Color(0xff25282b),
+                            style: textStyles.quincyCFBlack.copyWith(
+                              fontSize: sizes.fontRatio * 18,
                             ),
                           ),
                           verticalSpacer(8),
@@ -204,21 +187,21 @@ class JobAlertsScreen extends StatelessWidget {
                                     vertical: verticalValue(8),
                                   ),
                                   decoration: BoxDecoration(
-                                    color: ColorName.primaryColor.withOpacity(0.4),
+                                    color:
+                                        ColorName.primaryColor.withOpacity(0.4),
                                     borderRadius: BorderRadius.circular(16),
                                   ),
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         'Brisbane',
                                         textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Poppins',
+                                        style:
+                                            textStyles.poppinsRegular.copyWith(
                                           fontSize: sizes.fontRatio * 16,
-                                          fontWeight: FontWeight.w400,
-                                          color: const Color(0xff4a4947),
                                         ),
                                       ),
                                       SvgPicture.asset(
@@ -238,21 +221,21 @@ class JobAlertsScreen extends StatelessWidget {
                                     vertical: verticalValue(8),
                                   ),
                                   decoration: BoxDecoration(
-                                    color: ColorName.primaryColor.withOpacity(0.4),
+                                    color:
+                                        ColorName.primaryColor.withOpacity(0.4),
                                     borderRadius: BorderRadius.circular(16),
                                   ),
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         'Sydney',
                                         textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Poppins',
+                                        style:
+                                            textStyles.poppinsRegular.copyWith(
                                           fontSize: sizes.fontRatio * 16,
-                                          fontWeight: FontWeight.w400,
-                                          color: const Color(0xff4a4947),
                                         ),
                                       ),
                                       SvgPicture.asset(

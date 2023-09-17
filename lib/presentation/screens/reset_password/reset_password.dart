@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/presentation/app_routes/app_routes.dart';
+import 'package:myapp/presentation/extension/inkwell_extension.dart';
 import 'package:myapp/presentation/extension/stack_extension.dart';
-import 'dart:ui';
-import 'package:myapp/utils.dart';
 import 'package:myapp/widgets/spacer.dart';
 
 import '../../../gen/colors.gen.dart';
@@ -13,9 +12,6 @@ class ResetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 390;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
@@ -34,15 +30,11 @@ class ResetPasswordScreen extends StatelessWidget {
                 Text(
                   'Forgot Password',
                   textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Quincy CF',
-                    fontSize: sizes.fontRatio * 22,
-                    fontWeight: FontWeight.bold,
-                    height: 1.2575 * ffem / fem,
-                    color: const Color(0xff25282b),
+                  style: textStyles.quincyCFMedium.copyWith(
+                    fontSize: sizes.fontRatio * 34,
                   ),
                 ),
-                verticalSpacer(16),
+                verticalSpacer(8),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: horizontalValue(40),
@@ -50,22 +42,19 @@ class ResetPasswordScreen extends StatelessWidget {
                   child: Text(
                     'Please input the code received on your email',
                     textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Poppins',
+                    style: textStyles.poppinsRegular.copyWith(
                       fontSize: sizes.fontRatio * 18,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff4a4947),
                     ),
                   ),
                 ),
+                verticalSpacer(30),
                 Container(
                   margin: EdgeInsets.symmetric(
                     horizontal: horizontalValue(16),
                     vertical: verticalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -83,12 +72,8 @@ class ResetPasswordScreen extends StatelessWidget {
                       hintText: 'New Password',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
@@ -97,7 +82,7 @@ class ResetPasswordScreen extends StatelessWidget {
                     horizontal: horizontalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -115,52 +100,37 @@ class ResetPasswordScreen extends StatelessWidget {
                       hintText: 'Confirm Password',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
                 verticalSpacer(40),
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: horizontalValue(16),
+                const InkWell().inkWellRippleEffect(
+                  onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                    AppRoutes.login,
+                    (Route<dynamic> route) => false,
                   ),
-                  child: InkWell(
-                    splashColor: ColorName.transparentColor,
-                    highlightColor: ColorName.transparentColor,
-                    hoverColor: ColorName.transparentColor,
-                    focusColor: ColorName.transparentColor,
-                    onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                      AppRoutes.login,
-                      (Route<dynamic> route) => false,
+                  child: Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(
+                      horizontal: sizes.width * 0.28,
                     ),
-                    child: Container(
-                      width: double.infinity,
-                      margin:
-                          EdgeInsets.symmetric(horizontal: sizes.width * 0.25),
-                      padding: EdgeInsets.symmetric(
-                        vertical: verticalValue(8),
-                      ),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff808361),
-                        borderRadius: BorderRadius.circular(22 * fem),
-                      ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: verticalValue(8),
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xff808361),
+                      borderRadius: BorderRadius.circular(22),
+                    ),
+                    child: Center(
                       child: Center(
-                        child: Center(
-                          child: Text(
-                            'CONFIRM',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5 * ffem / fem,
-                              color: const Color(0xffffffff),
-                            ),
+                        child: Text(
+                          'CONFIRM',
+                          textAlign: TextAlign.center,
+                          style: textStyles.poppinsRegular.copyWith(
+                            fontSize: sizes.fontRatio * 18,
+                            color: ColorName.white,
                           ),
                         ),
                       ),

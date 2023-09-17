@@ -61,10 +61,8 @@ class BusinessBottomButtons extends StatelessWidget {
                       child: Text(
                         'NEXT',
                         textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Poppins',
-                          fontSize: sizes.fontRatio * 18,
-                          fontWeight: FontWeight.w400,
+                        style: textStyles.poppinsRegular.copyWith(
+                          fontSize: sizes.fontRatio * 16,
                           color: ColorName.white,
                         ),
                       ),
@@ -106,10 +104,8 @@ class BusinessBottomButtons extends StatelessWidget {
                         child: Text(
                           'SKIP',
                           textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: sizes.fontRatio * 18,
-                            fontWeight: FontWeight.w400,
+                          style: textStyles.poppinsRegular.copyWith(
+                            fontSize: sizes.fontRatio * 16,
                             color: ColorName.white,
                           ),
                         ),

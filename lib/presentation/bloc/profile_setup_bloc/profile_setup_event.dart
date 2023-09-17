@@ -8,3 +8,15 @@ abstract class ProfileSetupEvent extends Equatable {
 class OnPersonalTapEvent extends ProfileSetupEvent {}
 
 class OnBusinessTapEvent extends ProfileSetupEvent {}
+
+class OnEnthusiastTapEvent extends ProfileSetupEvent {
+  final bool value;
+
+  OnEnthusiastTapEvent({required this.value});
+}
+
+class OnProfessionalPhotographerTapEvent extends ProfileSetupEvent {
+  final bool value;
+
+  OnProfessionalPhotographerTapEvent({required this.value});
+}

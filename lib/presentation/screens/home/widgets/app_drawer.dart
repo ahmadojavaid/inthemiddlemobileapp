@@ -61,10 +61,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Inbox',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -82,10 +80,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Job Board',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -103,10 +99,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Profile',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -130,10 +124,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'My Jobs',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -157,10 +149,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Applied Jobs',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -184,10 +174,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Job Alert',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -205,10 +193,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Restore Purchase',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -232,10 +218,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Privacy Policy',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -259,10 +243,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Terms & Condition',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),
@@ -280,10 +262,8 @@ class AppDrawer extends StatelessWidget {
               child: Text(
                 'Logout',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsBold.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
                   color: ColorName.white,
                 ),
               ),

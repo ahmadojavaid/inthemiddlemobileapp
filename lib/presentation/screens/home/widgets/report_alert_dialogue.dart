@@ -75,11 +75,9 @@ class ReportAlertWidget extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     child: Text(
                       'Are you sure you want to report this job as inappropriate?',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: sizes.fontRatio * 16,
-                        fontWeight: FontWeight.w600,
-                        color: ColorName.black,
+                      style: textStyles.poppinsBold.copyWith(
+                        fontSize: sizes.fontRatio*18,
+                        color: ColorName.greyShade1
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -135,11 +133,9 @@ class ReportAlertWidget extends StatelessWidget {
                                     child: Text(
                                       'YES',
                                       textAlign: TextAlign.center,
-                                      style: SafeGoogleFont(
-                                        'Poppins',
-                                        fontSize: sizes.fontRatio * 18,
-                                        fontWeight: FontWeight.w400,
-                                        color: ColorName.white,
+                                      style: textStyles.poppinsRegular.copyWith(
+                                          fontSize: sizes.fontRatio*16,
+                                          color: ColorName.white
                                       ),
                                     ),
                                   ),
@@ -181,11 +177,9 @@ class ReportAlertWidget extends StatelessWidget {
                                       child: Text(
                                         'NO',
                                         textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Poppins',
-                                          fontSize: sizes.fontRatio * 18,
-                                          fontWeight: FontWeight.w400,
-                                          color: ColorName.white,
+                                        style: textStyles.poppinsRegular.copyWith(
+                                            fontSize: sizes.fontRatio*16,
+                                            color: ColorName.white
                                         ),
                                       ),
                                     ),

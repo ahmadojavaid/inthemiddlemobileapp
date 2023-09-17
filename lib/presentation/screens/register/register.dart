@@ -1,21 +1,27 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:myapp/presentation/export.dart';
 import 'package:myapp/presentation/extension/stack_extension.dart';
-import 'dart:ui';
 import 'package:myapp/utils.dart';
 import 'package:myapp/widgets/spacer.dart';
-
+import 'dart:math' as math;
+import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+  RegisterScreen({super.key});
+
+  final List<String> location = [
+    'Pakistan',
+    'United Arab Emirates',
+    'Saudi Arabia',
+  ];
+
+  final _selectedLocationFilter = 'Pakistan';
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 390;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
@@ -31,38 +37,30 @@ class RegisterScreen extends StatelessWidget {
                 Text(
                   'Create your Account',
                   textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Quincy CF',
-                    fontSize: 28 * ffem,
-                    fontWeight: FontWeight.w400,
-                    height: 1.2575 * ffem / fem,
-                    color: const Color(0xff25282b),
+                  style: textStyles.quincyCFMedium.copyWith(
+                    fontSize: sizes.fontRatio * 34,
                   ),
                 ),
-                verticalSpacer(16),
+                verticalSpacer(8),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: horizontalValue(16),
+                    horizontal: horizontalValue(30),
                   ),
                   child: Text(
                     'Get in the middle of where it’s happening',
                     textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 18 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff4a4947),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 18,
                     ),
                   ),
                 ),
-                verticalSpacer(16),
+                verticalSpacer(30),
                 Container(
                   margin: EdgeInsets.symmetric(
                     horizontal: horizontalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -79,12 +77,8 @@ class RegisterScreen extends StatelessWidget {
                       hintText: 'First Name',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
@@ -94,7 +88,7 @@ class RegisterScreen extends StatelessWidget {
                     horizontal: horizontalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -111,12 +105,8 @@ class RegisterScreen extends StatelessWidget {
                       hintText: 'Last Name',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
@@ -126,7 +116,7 @@ class RegisterScreen extends StatelessWidget {
                     horizontal: horizontalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -143,12 +133,8 @@ class RegisterScreen extends StatelessWidget {
                       hintText: 'Email Address',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
@@ -158,7 +144,7 @@ class RegisterScreen extends StatelessWidget {
                     horizontal: horizontalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -176,12 +162,8 @@ class RegisterScreen extends StatelessWidget {
                       hintText: 'Password',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
@@ -191,7 +173,7 @@ class RegisterScreen extends StatelessWidget {
                     horizontal: horizontalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -209,57 +191,85 @@ class RegisterScreen extends StatelessWidget {
                       hintText: 'Confirm Password',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
                 verticalSpacer(16),
                 Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.only(
+                    right: horizontalValue(8),
+                  ),
                   margin: EdgeInsets.symmetric(
                     horizontal: horizontalValue(16),
                   ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: horizontalValue(8),
-                    vertical: verticalValue(8),
-                  ),
-                  width: double.infinity,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
-                    color: const Color(0xffdddad2),
+                    borderRadius: BorderRadius.circular(15),
+                    color: ColorName.primaryColorShade1.withOpacity(0.4),
                   ),
-                  child: DropdownButton<String?>(
-                    value: 'Item1',
-                    onChanged: (String? newValue) {},
-                    items: const [
-                      DropdownMenuItem<String>(
-                        value: 'Item1',
-                        child: Text('Item1'),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton2(
+                      style: textStyles.poppinsRegular.copyWith(
+                        fontSize: sizes.fontRatio * 16,
                       ),
-                      DropdownMenuItem<String>(
-                        value: 'Item2',
-                        child: Text('Item2'),
+                      iconStyleData: IconStyleData(
+                        icon: SvgPicture.asset(
+                          Assets.svg.icArrowDown,
+                          color: ColorName.black,
+                        ),
+                        openMenuIcon: Transform.rotate(
+                          angle: -math.pi,
+                          child: SvgPicture.asset(
+                            Assets.svg.icArrowDown,
+                            color: ColorName.black,
+                          ),
+                        ),
                       ),
-                      DropdownMenuItem<String>(
-                        value: 'Item3',
-                        child: Text('Item3'),
+                      isExpanded: false,
+                      hint: Text(
+                        'Experience Level',
+                        style: textStyles.poppinsRegular.copyWith(
+                          fontSize: sizes.fontRatio * 10,
+                        ),
                       ),
-                      DropdownMenuItem<String>(
-                        value: 'Item4',
-                        child: Text('Item4'),
-                      ),
-                      DropdownMenuItem<String>(
-                        value: 'Item5',
-                        child: Text('Item5'),
-                      ),
-                    ],
+                      selectedItemBuilder: (BuildContext context) {
+                        return location
+                            .map(
+                              (item) => DropdownMenuItem<String>(
+                                value: item,
+                                child: Text(
+                                  item,
+                                  style: textStyles.poppinsRegular.copyWith(
+                                    fontSize: sizes.fontRatio * 16,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            )
+                            .toList();
+                      },
+                      items: location
+                          .map(
+                            (item) => DropdownMenuItem<String>(
+                              value: item,
+                              child: Text(
+                                item,
+                                style: textStyles.poppinsRegular.copyWith(
+                                  fontSize: sizes.fontRatio * 16,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          )
+                          .toList(),
+                      value: _selectedLocationFilter,
+                      onChanged: (value) {},
+                    ),
                   ),
                 ),
-                verticalSpacer(26),
+                verticalSpacer(40),
                 InkWell(
                   onTap: () {},
                   child: Container(
@@ -272,19 +282,16 @@ class RegisterScreen extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: const Color(0xff808361),
-                      borderRadius: BorderRadius.circular(22 * fem),
+                      borderRadius: BorderRadius.circular(40),
                     ),
                     child: Center(
                       child: Center(
                         child: Text(
                           'SIGN UP',
                           textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: 18 * ffem,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5 * ffem / fem,
-                            color: const Color(0xffffffff),
+                          style: textStyles.poppinsRegular.copyWith(
+                            fontSize: sizes.fontRatio * 20,
+                            color: ColorName.white,
                           ),
                         ),
                       ),
@@ -295,56 +302,44 @@ class RegisterScreen extends StatelessWidget {
                 RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
-                    style: SafeGoogleFont(
-                      'Fira Sans',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2 * ffem / fem,
-                      color: const Color(0xff4a4947),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                     children: [
                       TextSpan(
                         text: 'Already have an account? ',
-                        style: SafeGoogleFont(
-                          'Poppins',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.5 * ffem / fem,
-                          color: const Color(0xff4a4947),
+                        style: textStyles.poppinsRegular.copyWith(
+                          fontSize: sizes.fontRatio * 16,
+                          color: ColorName.blackShade,
                         ),
                       ),
                       TextSpan(
                         text: 'Sign In',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => Navigator.of(context).pop(),
-                        style: SafeGoogleFont(
-                          'Poppins',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w600,
-                          height: 1.5 * ffem / fem,
-                          color: const Color(0xff808361),
+                        style: textStyles.poppinsBold.copyWith(
+                          fontSize: sizes.fontRatio * 16,
+                          color: ColorName.primaryColor,
                         ),
                       ),
                     ],
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: horizontalValue(16),
+                  margin: EdgeInsets.only(
+                    left: horizontalValue(16),
+                    right: horizontalValue(16),
+                    top: verticalValue(16),
                   ),
                   child: Text(
                     'By Signing Up, you agree to our',
                     textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff4a4947),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
+                      color: ColorName.blackShade,
                     ),
                   ),
                 ),
-                verticalSpacer(20),
                 Container(
                   width: double.infinity,
                   margin: EdgeInsets.symmetric(
@@ -365,12 +360,9 @@ class RegisterScreen extends StatelessWidget {
                         child: Text(
                           'Terms & Conditions',
                           textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: 15 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.5 * ffem / fem,
-                            color: const Color(0xff808361),
+                          style: textStyles.poppinsBold.copyWith(
+                            fontSize: sizes.fontRatio * 16,
+                            color: ColorName.primaryColor,
                           ),
                         ),
                       ),
@@ -378,12 +370,9 @@ class RegisterScreen extends StatelessWidget {
                       Text(
                         ' and',
                         textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Poppins',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.5 * ffem / fem,
-                          color: const Color(0xff4a4947),
+                        style: textStyles.poppinsRegular.copyWith(
+                          fontSize: sizes.fontRatio * 16,
+                          color: ColorName.blackShade,
                         ),
                       ),
                       verticalSpacer(16),
@@ -399,12 +388,9 @@ class RegisterScreen extends StatelessWidget {
                         child: Text(
                           ' Privacy Policy',
                           textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: 15 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.5 * ffem / fem,
-                            color: const Color(0xff808361),
+                          style: textStyles.poppinsBold.copyWith(
+                            fontSize: sizes.fontRatio * 16,
+                            color: ColorName.primaryColor,
                           ),
                         ),
                       ),

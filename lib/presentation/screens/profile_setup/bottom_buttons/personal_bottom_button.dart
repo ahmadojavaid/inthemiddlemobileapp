@@ -34,7 +34,7 @@ class PersonalBottomButton extends StatelessWidget {
               vertical: verticalValue(12),
             ),
             padding: EdgeInsets.symmetric(
-              vertical: verticalValue(6),
+              vertical: verticalValue(10),
             ),
             width: double.infinity,
             decoration: BoxDecoration(
@@ -46,11 +46,9 @@ class PersonalBottomButton extends StatelessWidget {
                 child: Text(
                   'NEXT',
                   textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: sizes.fontRatio * 18,
-                    fontWeight: FontWeight.w500,
+                  style: textStyles.poppinsRegular.copyWith(
                     color: ColorName.white,
+                    fontSize: sizes.fontRatio*18,
                   ),
                 ),
               ),
