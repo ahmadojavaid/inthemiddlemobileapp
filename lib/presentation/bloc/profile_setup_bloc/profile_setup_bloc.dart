@@ -10,6 +10,8 @@ class ProfileSetupBloc extends Bloc<ProfileSetupEvent, ProfileSetupState> {
   ProfileSetupBloc() : super(const ProfileSetupState()) {
     on<OnPersonalTapEvent>(_onPersonalTapEvent);
     on<OnBusinessTapEvent>(_onBusinessTapEvent);
+    on<OnEnthusiastTapEvent>(_onEnthusiastTapEvent);
+    on<OnProfessionalPhotographerTapEvent>(_onProfessionalPhotographerTapEvent);
   }
 
   void _onPersonalTapEvent(OnPersonalTapEvent event, emit) {
@@ -24,6 +26,27 @@ class ProfileSetupBloc extends Bloc<ProfileSetupEvent, ProfileSetupState> {
     emit(
       state.copyWith(
         status: ProfileSetupStatus.business,
+      ),
+    );
+  }
+
+  void _onEnthusiastTapEvent(OnEnthusiastTapEvent event, emit) {
+    emit(
+      state.copyWith(
+        iAmAnEnthusiast: event.value,
+        iAmAProfessionalPhotographer: false,
+      ),
+    );
+  }
+
+  void _onProfessionalPhotographerTapEvent(
+    OnProfessionalPhotographerTapEvent event,
+    emit,
+  ) {
+    emit(
+      state.copyWith(
+        iAmAnEnthusiast: false,
+        iAmAProfessionalPhotographer: event.value,
       ),
     );
   }

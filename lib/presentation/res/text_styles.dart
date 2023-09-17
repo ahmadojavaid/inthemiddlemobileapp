@@ -1,30 +1,139 @@
-
-
 import '../export.dart';
 
 class TextStyles {
-  final regular = const TextStyle(
-    fontWeight: FontWeight.w400,
-    fontFamily: "montserratRegular",
+
+  // Poppins
+  final poppinsBlack = const TextStyle(
+    fontFamily: "poppinsBlack",
   );
 
-  final medium = const TextStyle(
-    fontWeight: FontWeight.w500,
-    fontFamily: "montserratMedium",
+  final poppinsBlackItalic = const TextStyle(
+    fontFamily: "poppinsBlackItalic",
   );
 
-  final semiBold = const TextStyle(
-    fontWeight: FontWeight.w600,
-    fontFamily: "montserratSemiBold",
+  final poppinsBold = const TextStyle(
+    fontFamily: "poppinsBold",
   );
 
-  final bold = const TextStyle(
-    fontWeight: FontWeight.bold,
-    fontFamily: "montserratBold",
+  final poppinsBoldItalic = const TextStyle(
+    fontFamily: "poppinsBoldItalic",
   );
 
-  final extraBold = const TextStyle(
-    fontWeight: FontWeight.w900,
-    fontFamily: "montserratExtraBold",
+  final poppinsExtraBoldItalic = const TextStyle(
+    fontFamily: "poppinsExtraBoldItalic",
+  );
+
+  final poppinsExtraLight = const TextStyle(
+    fontFamily: "poppinsExtraLight",
+  );
+
+  final poppinsExtraLightItalic = const TextStyle(
+    fontFamily: "poppinsExtraLightItalic",
+  );
+
+  final poppinsItalic = const TextStyle(
+    fontFamily: "poppinsItalic",
+  );
+
+  final poppinsLight = const TextStyle(
+    fontFamily: "poppinsLight",
+  );
+
+  final poppinsLightItalic = const TextStyle(
+    fontFamily: "poppinsLightItalic",
+  );
+
+  final poppinsMedium = const TextStyle(
+    fontFamily: "poppinsMedium",
+  );
+
+  final poppinsMediumItalic = const TextStyle(
+    fontFamily: "poppinsMediumItalic",
+  );
+
+  final poppinsRegular = const TextStyle(
+    fontFamily: "poppinsRegular",
+  );
+
+  final poppinsSemiBold = const TextStyle(
+    fontFamily: "poppinsSemiBold",
+  );
+
+  final poppinsSemiBoldItalic = const TextStyle(
+    fontFamily: "poppinsSemiBoldItalic",
+  );
+
+  final poppinsThin = const TextStyle(
+    fontFamily: "poppinsThin",
+  );
+
+  final poppinsThinItalic = const TextStyle(
+    fontFamily: "poppinsThinItalic",
+  );
+
+  // Quincy CF
+
+  final connaryFagenQuincyCFText = const TextStyle(
+    fontFamily: "connaryFagenQuincyCFText",
+  );
+
+  final connaryFagenQuincyCFTextItalic = const TextStyle(
+    fontFamily: "ConnaryFagenQuincyCFTextItalic",
+  );
+
+  final connaryFagenQuincyCFThin = const TextStyle(
+    fontFamily: "ConnaryFagenQuincyCFThin",
+  );
+
+  final ConnaryFagenQuincyCFThinItalic = const TextStyle(
+    fontFamily: "ConnaryFagenQuincyCFThinItalic",
+  );
+
+  final quincyCFBlack = const TextStyle(
+    fontFamily: "quincyCFBlack",
+  );
+
+  final quincyCFBlackItalic = const TextStyle(
+    fontFamily: "quincyCFBlackItalic",
+  );
+
+  final quincyCFBold = const TextStyle(
+    fontFamily: "quincyCFBold",
+  );
+
+  final quincyCFBoldItalic = const TextStyle(
+    fontFamily: "quincyCFBoldItalic",
+  );
+
+  final quincyCFExtraBold = const TextStyle(
+    fontFamily: "quincyCFExtraBold",
+  );
+
+  final quincyCFExtraBoldItalic = const TextStyle(
+    fontFamily: "quincyCFExtraBoldItalic",
+  );
+
+  final quincyCFLight = const TextStyle(
+    fontFamily: "quincyCFLight",
+  );
+
+  final quincyCFLightItalic = const TextStyle(
+    fontFamily: "quincyCFLightItalic",
+  );
+
+  final quincyCFMedium = const TextStyle(
+    fontFamily: "quincyCFMedium",
+  );
+
+  final quincyCFMediumItalic = const TextStyle(
+    fontFamily: "quincyCFMediumItalic",
+  );
+
+  final quincyCFRegular = const TextStyle(
+    fontFamily: "quincyCFRegular",
+  );
+
+  final quincyCFRegularItalic = const TextStyle(
+    fontFamily: "quincyCFRegularItalic",
   );
 }

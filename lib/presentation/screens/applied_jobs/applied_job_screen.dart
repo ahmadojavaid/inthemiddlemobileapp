@@ -60,57 +60,45 @@ class AppliedJobScreen extends StatelessWidget {
                           child: RichText(
                             textAlign: TextAlign.center,
                             text: TextSpan(
-                              style: SafeGoogleFont(
-                                'Poppins',
+                              style: textStyles.poppinsRegular.copyWith(
+                                color: ColorName.greyShade1,
                                 fontSize: sizes.fontRatio * 16,
-                                fontWeight: FontWeight.w400,
-                                color: ColorName.white,
                               ),
                               children: [
                                 TextSpan(
                                   text: 'Showcase',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsRegular.copyWith(
                                     color: ColorName.white,
+                                    fontSize: sizes.fontRatio * 16,
                                   ),
                                 ),
                                 TextSpan(
                                   text: ' ',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
+                                    color: ColorName.primaryColor,
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.white,
                                   ),
                                 ),
                                 TextSpan(
                                   text: 'your talent',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsRegular.copyWith(
                                     color: ColorName.primaryColor,
+                                    fontSize: sizes.fontRatio * 16,
                                   ),
                                 ),
                                 TextSpan(
                                   text: ' ',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsRegular.copyWith(
                                     color: ColorName.white,
+                                    fontSize: sizes.fontRatio * 16,
                                   ),
                                 ),
                                 TextSpan(
                                   text:
                                       'behind the lens by adding your portfolio...',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
-                                    fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
+                                  style: textStyles.poppinsRegular.copyWith(
                                     color: ColorName.white,
+                                    fontSize: sizes.fontRatio * 16,
                                   ),
                                 ),
                               ],
@@ -151,11 +139,9 @@ class AppliedJobScreen extends StatelessWidget {
                             Text(
                               'Applied Jobs',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Poppins',
+                              style: textStyles.poppinsBold.copyWith(
+                                color: ColorName.greyShade1,
                                 fontSize: sizes.fontRatio * 20,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black,
                               ),
                             ),
                             const Spacer(),
@@ -183,7 +169,7 @@ class AppliedJobScreen extends StatelessWidget {
                         ),
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: horizontalValue(16),
+                            horizontal: horizontalValue(12),
                             vertical: verticalValue(8),
                           ),
                           decoration: BoxDecoration(
@@ -197,11 +183,9 @@ class AppliedJobScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Event Photography',
-                                    style: SafeGoogleFont(
-                                      'Poppins',
+                                    style: textStyles.poppinsBold.copyWith(
+                                      color: ColorName.greyShade1,
                                       fontSize: sizes.fontRatio * 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: const Color(0xff4a4947),
                                     ),
                                   ),
                                   const Spacer(),
@@ -224,96 +208,84 @@ class AppliedJobScreen extends StatelessWidget {
                               verticalSpacer(8),
                               Text(
                                 'When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only...',
-                                style: SafeGoogleFont(
-                                  'Poppins',
+                                style: textStyles.poppinsRegular.copyWith(
+                                  color: ColorName.greyShade1,
                                   fontSize: sizes.fontRatio * 16,
-                                  fontWeight: FontWeight.w400,
-                                  color: const Color(0xff4a4947),
                                 ),
                               ),
                               verticalSpacer(8),
                               Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: horizontalValue(10),
+                                  vertical: verticalValue(10),
+                                ),
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: const Color(0xffdddad2),
                                   borderRadius: BorderRadius.circular(16),
                                 ),
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: horizontalValue(16),
-                                  vertical: verticalValue(8),
-                                ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        RichText(
-                                          text: TextSpan(
-                                            style: SafeGoogleFont(
-                                              'Poppins',
-                                              fontSize: sizes.fontRatio * 14,
-                                              fontWeight: FontWeight.w400,
-                                              color: const Color(0xff4a4947),
-                                            ),
+                                        Container(
+                                          padding: EdgeInsets.only(
+                                            right: horizontalValue(70),
+                                            top: verticalValue(6),
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              TextSpan(
-                                                text: 'Posted\n',
-                                                style: SafeGoogleFont(
-                                                  'Poppins',
+                                              Text(
+                                                'Posted',
+                                                style: textStyles.poppinsBold
+                                                    .copyWith(
                                                   fontSize:
-                                                      sizes.fontRatio * 14,
-                                                  fontWeight: FontWeight.w600,
-                                                  color:
-                                                      const Color(0xff9d9890),
+                                                      sizes.fontRatio * 16,
+                                                  color: ColorName.primaryColor,
                                                 ),
                                               ),
-                                              TextSpan(
-                                                text: '3 hrs ago',
-                                                style: SafeGoogleFont(
-                                                  'Poppins',
+                                              Text(
+                                                '3 hr ago',
+                                                style: textStyles.poppinsRegular
+                                                    .copyWith(
                                                   fontSize:
-                                                      sizes.fontRatio * 14,
-                                                  fontWeight: FontWeight.w400,
-                                                  color:
-                                                      const Color(0xff4a4947),
+                                                      sizes.fontRatio * 18,
+                                                  color: ColorName.greyShade1,
                                                 ),
                                               ),
                                             ],
                                           ),
                                         ),
-                                        RichText(
-                                          text: TextSpan(
-                                            style: SafeGoogleFont(
-                                              'Poppins',
-                                              fontSize: sizes.fontRatio * 14,
-                                              fontWeight: FontWeight.w400,
-                                              color: const Color(0xff4a4947),
-                                            ),
+                                        Container(
+                                          width: 2,
+                                          height: sizes.heightRatio * 40,
+                                          color: ColorName.primaryColor,
+                                        ),
+                                        horizontalSpacer(16),
+                                        IntrinsicWidth(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              TextSpan(
-                                                text: 'Experience Level\n',
-                                                style: SafeGoogleFont(
-                                                  'Poppins',
-                                                  fontSize:
-                                                      sizes.fontRatio * 14,
-                                                  fontWeight: FontWeight.w600,
-                                                  color:
-                                                      const Color(0xff9d9890),
-                                                ),
-                                              ),
-                                              TextSpan(
-                                                text: 'Professional',
-                                                style: SafeGoogleFont(
-                                                  'Poppins',
+                                              Text(
+                                                'Experience Level',
+                                                style: textStyles.poppinsBold
+                                                    .copyWith(
                                                   fontSize:
                                                       sizes.fontRatio * 16,
-                                                  fontWeight: FontWeight.w400,
-                                                  color:
-                                                      const Color(0xff4a4947),
+                                                  color: ColorName.primaryColor,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Professional',
+                                                style: textStyles.poppinsRegular
+                                                    .copyWith(
+                                                  fontSize:
+                                                      sizes.fontRatio * 18,
+                                                  color: ColorName.greyShade1,
                                                 ),
                                               ),
                                             ],
@@ -321,75 +293,82 @@ class AppliedJobScreen extends StatelessWidget {
                                         ),
                                       ],
                                     ),
+                                    verticalSpacer(6),
                                     Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        RichText(
-                                          text: TextSpan(
-                                            style: SafeGoogleFont(
-                                              'Poppins',
-                                              fontSize: sizes.fontRatio * 14,
-                                              fontWeight: FontWeight.w400,
-                                              color: const Color(0xff4a4947),
-                                            ),
+                                        Container(
+                                          width: sizes.widthRatio * 120,
+                                          height: 2,
+                                          color: ColorName.primaryColor,
+                                        ),
+                                        horizontalSpacer(24),
+                                        Container(
+                                          width: sizes.widthRatio * 140,
+                                          height: 2,
+                                          color: ColorName.primaryColor,
+                                        ),
+                                      ],
+                                    ),
+                                    verticalSpacer(6),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.only(
+                                            right: horizontalValue(17),
+                                            top: verticalValue(6),
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              TextSpan(
-                                                text: 'Location\n',
-                                                style: SafeGoogleFont(
-                                                  'Poppins',
-                                                  fontSize:
-                                                      sizes.fontRatio * 14,
-                                                  fontWeight: FontWeight.w600,
-                                                  color:
-                                                      const Color(0xff9d9890),
-                                                ),
-                                              ),
-                                              TextSpan(
-                                                text: 'Port Macquarie',
-                                                style: SafeGoogleFont(
-                                                  'Poppins',
+                                              Text(
+                                                'Region',
+                                                style: textStyles.poppinsBold
+                                                    .copyWith(
                                                   fontSize:
                                                       sizes.fontRatio * 16,
-                                                  fontWeight: FontWeight.w400,
-                                                  color:
-                                                      const Color(0xff4a4947),
+                                                  color: ColorName.primaryColor,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Port Macquaire',
+                                                style: textStyles.poppinsRegular
+                                                    .copyWith(
+                                                  fontSize:
+                                                      sizes.fontRatio * 18,
+                                                  color: ColorName.greyShade1,
                                                 ),
                                               ),
                                             ],
                                           ),
                                         ),
-                                        RichText(
-                                          text: TextSpan(
-                                            style: SafeGoogleFont(
-                                              'Poppins',
-                                              fontSize: sizes.fontRatio * 14,
-                                              fontWeight: FontWeight.w400,
-                                              color: const Color(0xff4a4947),
-                                            ),
+                                        Container(
+                                          width: 2,
+                                          height: sizes.heightRatio * 40,
+                                          color: ColorName.primaryColor,
+                                        ),
+                                        horizontalSpacer(16),
+                                        IntrinsicWidth(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              TextSpan(
-                                                text: 'Job Date\n',
-                                                style: SafeGoogleFont(
-                                                  'Poppins',
-                                                  fontSize:
-                                                      sizes.fontRatio * 14,
-                                                  fontWeight: FontWeight.w600,
-                                                  color:
-                                                      const Color(0xff9d9890),
-                                                ),
-                                              ),
-                                              TextSpan(
-                                                text: '7/09/2023',
-                                                style: SafeGoogleFont(
-                                                  'Poppins',
+                                              Text(
+                                                'Job Date',
+                                                style: textStyles.poppinsBold
+                                                    .copyWith(
                                                   fontSize:
                                                       sizes.fontRatio * 16,
-                                                  fontWeight: FontWeight.w400,
-                                                  color:
-                                                      const Color(0xff4a4947),
+                                                  color: ColorName.primaryColor,
+                                                ),
+                                              ),
+                                              Text(
+                                                '7/09/2023',
+                                                style: textStyles.poppinsRegular
+                                                    .copyWith(
+                                                  fontSize:
+                                                      sizes.fontRatio * 18,
+                                                  color: ColorName.greyShade1,
                                                 ),
                                               ),
                                             ],

@@ -63,3 +63,105 @@ flutter:
     - assets/page-1/images/
     - assets/svg/
     - assets/png/
+  fonts:
+    #Poppins
+    - family: poppinsBlack
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsBlack.otf
+    - family: poppinsBlackItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsBlackItalic.otf
+    - family: poppinsBold
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsBold.otf
+    - family: poppinsBoldItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsBoldItalic.otf
+    - family: poppinsExtraBoldItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsExtraBoldItalic.otf
+    - family: poppinsExtraLight
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsExtraLight.otf
+    - family: poppinsExtraLightItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsExtraLightItalic.otf
+    - family: poppinsItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsItalic.otf
+    - family: poppinsLight
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsLight.otf
+    - family: poppinsLightItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsLightItalic.otf
+    - family: poppinsMedium
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsMedium.otf
+    - family: poppinsMediumItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsMediumItalic.otf
+    - family: poppinsRegular
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsRegular.otf
+    - family: poppinsSemiBold
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsSemiBold.otf
+    - family: poppinsSemiBoldItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsSemiBoldItalic.otf
+    - family: poppinsThin
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsThin.otf
+    - family: poppinsThinItalic
+      fonts:
+        - asset: assets/fonts/poppins/PoppinsThinItalic.otf
+    # Quincy CF
+    - family: connaryFagenQuincyCFText
+      fonts:
+        - asset: assets/fonts/quincy_cf/ConnaryFagenQuincyCFText.otf
+    - family: connaryFagenQuincyCFTextItalic
+      fonts:
+        - asset: assets/fonts/quincy_cf/ConnaryFagenQuincyCFTextItalic.otf
+    - family: connaryFagenQuincyCFThin
+      fonts:
+        - asset: assets/fonts/quincy_cf/ConnaryFagenQuincyCFThin.otf
+    - family: ConnaryFagenQuincyCFThinItalic
+      fonts:
+        - asset: assets/fonts/quincy_cf/ConnaryFagenQuincyCFThinItalic.otf
+    - family: quincyCFBlack
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFBlack.ttf
+    - family: quincyCFBlackItalic
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFBlackItalic.ttf
+    - family: quincyCFBold
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFBold.ttf
+    - family: quincyCFBoldItalic
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFBoldItalic.ttf
+    - family: quincyCFExtraBold
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFExtraBold.ttf
+    - family: quincyCFExtraBoldItalic
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFExtraBoldItalic.ttf
+    - family: quincyCFLight
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFLight.ttf
+    - family: quincyCFLightItalic
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFLightItalic.ttf
+    - family: quincyCFMedium
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFMedium.ttf
+    - family: quincyCFMediumItalic
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFMediumItalic.ttf
+    - family: quincyCFRegular
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFRegular.ttf
+    - family: quincyCFRegularItalic
+      fonts:
+        - asset: assets/fonts/quincy_cf/QuincyCFRegularItalic.ttf

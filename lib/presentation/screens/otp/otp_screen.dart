@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/presentation/app_routes/app_routes.dart';
+import 'package:myapp/presentation/extension/inkwell_extension.dart';
 import 'package:myapp/presentation/extension/stack_extension.dart';
-import 'dart:ui';
 import 'package:myapp/utils.dart';
 
 import '../../../gen/colors.gen.dart';
@@ -13,9 +13,6 @@ class OtpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 390;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
@@ -34,14 +31,11 @@ class OtpScreen extends StatelessWidget {
                 Text(
                   'Forgot Password',
                   textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Quincy CF',
-                    fontSize: sizes.fontRatio * 22,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xff25282b),
+                  style: textStyles.quincyCFMedium.copyWith(
+                    fontSize: sizes.fontRatio * 34,
                   ),
                 ),
-                verticalSpacer(16),
+                verticalSpacer(8),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: horizontalValue(40),
@@ -49,22 +43,19 @@ class OtpScreen extends StatelessWidget {
                   child: Text(
                     'Please input the code received on your email',
                     textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Poppins',
+                    style: textStyles.poppinsRegular.copyWith(
                       fontSize: sizes.fontRatio * 18,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff4a4947),
                     ),
                   ),
                 ),
+                verticalSpacer(30),
                 Container(
                   margin: EdgeInsets.symmetric(
                     horizontal: horizontalValue(16),
                     vertical: verticalValue(16),
                   ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12 * fem),
+                    borderRadius: BorderRadius.circular(12),
                     color: const Color(0xffdddad2),
                   ),
                   child: TextField(
@@ -81,104 +72,66 @@ class OtpScreen extends StatelessWidget {
                       hintText: 'Code',
                       hintStyle: const TextStyle(color: Color(0xff9f958b)),
                     ),
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 15 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5 * ffem / fem,
-                      color: const Color(0xff000000),
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 16,
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: horizontalValue(16),
+                verticalSpacer(40),
+                const InkWell().inkWellRippleEffect(
+                  onTap: () => Navigator.pushNamed(
+                    context,
+                    AppRoutes.enterNewPassword,
                   ),
-                  child: InkWell(
-                    focusColor: ColorName.transparentColor,
-                    hoverColor: ColorName.transparentColor,
-                    highlightColor: ColorName.transparentColor,
-                    splashColor: ColorName.transparentColor,
-                    onTap: () => Navigator.pushNamed(
-                      context,
-                      AppRoutes.enterNewPassword,
+                  child: Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(
+                      horizontal: sizes.width * 0.28,
                     ),
-                    child: Container(
-                      width: double.infinity,
-                      margin: EdgeInsets.symmetric(
-                        horizontal: sizes.width * 0.25,
-                      ),
-                      padding: EdgeInsets.symmetric(
-                        vertical: verticalValue(6),
-                      ),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff808361),
-                        borderRadius: BorderRadius.circular(22 * fem),
-                      ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: verticalValue(8),
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xff808361),
+                      borderRadius: BorderRadius.circular(22),
+                    ),
+                    child: Center(
                       child: Center(
-                        child: Center(
-                          child: Text(
-                            'NEXT',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5 * ffem / fem,
-                              color: const Color(0xffffffff),
-                            ),
+                        child: Text(
+                          'NEXT',
+                          textAlign: TextAlign.center,
+                          style: textStyles.poppinsRegular.copyWith(
+                            fontSize: sizes.fontRatio * 18,
+                            color: ColorName.white,
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(
-                    0 * fem,
-                    0 * fem,
-                    20 * fem,
-                    0 * fem,
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
+                verticalSpacer(16),
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: textStyles.poppinsRegular.copyWith(
+                      fontSize: sizes.fontRatio * 18,
                     ),
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        style: SafeGoogleFont(
-                          'Fira Sans',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2 * ffem / fem,
-                          color: const Color(0xff4a4947),
+                    children: [
+                      TextSpan(
+                        text: 'Didn’t receive the code? ',
+                        style: textStyles.poppinsRegular.copyWith(
+                          fontSize: sizes.fontRatio * 18,
+                          color: ColorName.blackShade,
                         ),
-                        children: [
-                          TextSpan(
-                            text: 'Didn’t receive the code? ',
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.5 * ffem / fem,
-                              color: Color(0xff4a4947),
-                            ),
-                          ),
-                          TextSpan(
-                            text: 'Resend',
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.5 * ffem / fem,
-                              color: Color(0xff808361),
-                            ),
-                          ),
-                        ],
                       ),
-                    ),
+                      TextSpan(
+                        text: ' Resend',
+                        style: textStyles.poppinsRegular.copyWith(
+                          fontSize: sizes.fontRatio * 18,
+                          color: ColorName.primaryColor,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

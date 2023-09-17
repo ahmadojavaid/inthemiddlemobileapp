@@ -4,9 +4,12 @@
     <color name="primary_color">#808361</color>
     <color name="primary_color_light">#C7BDB3</color>
     <color name="primary_color_shade_1">#B7A78E</color>
+    <color name="text_field_shade">#dddad2</color>
+    <color name="hint_text_shade">#9f958b</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="black_shade">#25282B</color>
     <color name="grey_shade1">#4A4947</color>
     <color name="grey_shade2">#D6D8DA</color>
 

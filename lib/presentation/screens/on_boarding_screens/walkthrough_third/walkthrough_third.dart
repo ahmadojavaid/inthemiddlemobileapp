@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:myapp/utils.dart';
 import 'package:myapp/widgets/spacer.dart';
 
+import '../../../res/res.dart';
+
 class WalkThroughThird extends StatelessWidget {
   const WalkThroughThird({super.key});
 
@@ -47,42 +49,30 @@ class WalkThroughThird extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 83 * fem, 13 * fem),
-                constraints: BoxConstraints(
-                  maxWidth: 259 * fem,
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: horizontalValue(20),
                 ),
                 child: Text(
                   'Mode Otomatis & Manual',
-                  style: SafeGoogleFont(
-                    'Quincy CF',
-                    decoration: TextDecoration.none,
-                    fontSize: 36 * ffem,
-                    fontWeight: FontWeight.w400,
-                    height: 1.2575 * ffem / fem,
-                    color: const Color(0xff25282b),
+                  style: textStyles.quincyCFMedium.copyWith(
+                    fontSize: sizes.fontRatio * 36,
                   ),
                 ),
               ),
-              Container(
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 4 * fem, 37 * fem),
-                constraints: BoxConstraints(
-                  maxWidth: 338 * fem,
+              verticalSpacer(16),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: horizontalValue(20),
                 ),
                 child: Text(
                   'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    decoration: TextDecoration.none,
-                    fontSize: 16 * ffem,
-                    fontWeight: FontWeight.w400,
-                    height: 1.5 * ffem / fem,
-                    color: Color(0xff4a4947),
+                  style: textStyles.poppinsRegular.copyWith(
+                    fontSize: sizes.fontRatio * 16,
                   ),
                 ),
               ),
+              verticalSpacer(38),
               IntrinsicHeight(
                 child: Container(
                   margin: EdgeInsets.symmetric(

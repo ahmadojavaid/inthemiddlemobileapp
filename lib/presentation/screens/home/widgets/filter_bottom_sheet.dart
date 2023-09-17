@@ -77,11 +77,9 @@ class FilterWidget extends StatelessWidget {
                 Text(
                   'Filters',
                   textAlign: TextAlign.center,
-                  style: SafeGoogleFont(
-                    'Poppins',
+                  style: textStyles.poppinsBold.copyWith(
                     fontSize: sizes.fontRatio * 20,
-                    fontWeight: FontWeight.w600,
-                    color: ColorName.black,
+                    color: ColorName.blackShade,
                   ),
                 ),
                 const Spacer(),
@@ -104,21 +102,20 @@ class FilterWidget extends StatelessWidget {
           ),
           verticalSpacer(16),
           Text(
-            'Experience Level',
+            'Experience',
             textAlign: TextAlign.center,
-            style: SafeGoogleFont(
-              'Poppins',
+            style: textStyles.poppinsMedium.copyWith(
               fontSize: sizes.fontRatio * 20,
-              fontWeight: FontWeight.w600,
-              color: ColorName.black,
+              color: ColorName.blackShade,
             ),
           ),
           verticalSpacer(8),
           Container(
             width: double.infinity,
-            padding: EdgeInsets.symmetric(
-              horizontal: horizontalValue(12),
-              vertical: verticalValue(6),
+            padding: EdgeInsets.only(
+              top: verticalValue(4),
+              bottom: verticalValue(4),
+              right: horizontalValue(10),
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
@@ -126,11 +123,9 @@ class FilterWidget extends StatelessWidget {
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton2(
-                style: SafeGoogleFont(
-                  'Poppins',
+                style: textStyles.poppinsRegular.copyWith(
                   fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
-                  color: ColorName.black,
+                  color: ColorName.hintTextShade,
                 ),
                 iconStyleData: IconStyleData(
                   icon: SvgPicture.asset(
@@ -148,11 +143,9 @@ class FilterWidget extends StatelessWidget {
                 isExpanded: false,
                 hint: Text(
                   'Experience Level',
-                  style: SafeGoogleFont(
-                    'Poppins',
+                  style: textStyles.poppinsRegular.copyWith(
                     fontSize: sizes.fontRatio * 10,
-                    fontWeight: FontWeight.w600,
-                    color: ColorName.black,
+                    color: ColorName.hintTextShade,
                   ),
                 ),
                 selectedItemBuilder: (BuildContext context) {
@@ -200,19 +193,18 @@ class FilterWidget extends StatelessWidget {
           Text(
             'Location',
             textAlign: TextAlign.center,
-            style: SafeGoogleFont(
-              'Poppins',
+            style: textStyles.poppinsMedium.copyWith(
               fontSize: sizes.fontRatio * 20,
-              fontWeight: FontWeight.w600,
-              color: ColorName.black,
+              color: ColorName.blackShade,
             ),
           ),
           verticalSpacer(8),
           Container(
             width: double.infinity,
-            padding: EdgeInsets.symmetric(
-              horizontal: horizontalValue(12),
-              vertical: verticalValue(6),
+            padding: EdgeInsets.only(
+              top: verticalValue(4),
+              bottom: verticalValue(4),
+              right: horizontalValue(10),
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
@@ -220,11 +212,9 @@ class FilterWidget extends StatelessWidget {
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton2(
-                style: SafeGoogleFont(
-                  'Poppins',
-                  fontSize: sizes.fontRatio * 18,
-                  fontWeight: FontWeight.w600,
-                  color: ColorName.black,
+                style: textStyles.poppinsRegular.copyWith(
+                  fontSize: sizes.fontRatio * 16,
+                  color: ColorName.greyShade1,
                 ),
                 iconStyleData: IconStyleData(
                   icon: SvgPicture.asset(
@@ -241,12 +231,10 @@ class FilterWidget extends StatelessWidget {
                 ),
                 isExpanded: false,
                 hint: Text(
-                  'Experience Level',
-                  style: SafeGoogleFont(
-                    'Poppins',
+                  'Location',
+                  style: textStyles.poppinsRegular.copyWith(
                     fontSize: sizes.fontRatio * 10,
-                    fontWeight: FontWeight.w600,
-                    color: ColorName.black,
+                    color: ColorName.hintTextShade,
                   ),
                 ),
                 selectedItemBuilder: (BuildContext context) {
@@ -353,10 +341,8 @@ class FilterWidget extends StatelessWidget {
                       child: Text(
                         'Apply'.toUpperCase(),
                         textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Poppins',
+                        style: textStyles.poppinsRegular.copyWith(
                           fontSize: sizes.fontRatio * 18,
-                          fontWeight: FontWeight.w500,
                           color: ColorName.white,
                         ),
                       ),

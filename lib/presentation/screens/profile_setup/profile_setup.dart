@@ -103,13 +103,11 @@ class ProfileSetupScreen extends StatelessWidget {
                                         child: Center(
                                           child: Text(
                                             'Personal',
-                                            style: SafeGoogleFont(
-                                              'Poppins',
+                                            style: textStyles.poppinsRegular.copyWith(
                                               fontSize: sizes.fontRatio * 18,
-                                              fontWeight: FontWeight.w500,
                                               color: state.status ==
-                                                      ProfileSetupStatus
-                                                          .personal
+                                                  ProfileSetupStatus
+                                                      .personal
                                                   ? ColorName.white
                                                   : ColorName.primaryColor,
                                             ),
@@ -158,13 +156,11 @@ class ProfileSetupScreen extends StatelessWidget {
                                         child: Center(
                                           child: Text(
                                             'Business',
-                                            style: SafeGoogleFont(
-                                              'Poppins',
-                                              fontSize: sizes.fontRatio * 20,
-                                              fontWeight: FontWeight.w500,
+                                            style: textStyles.poppinsRegular.copyWith(
+                                              fontSize: sizes.fontRatio * 18,
                                               color: state.status ==
-                                                      ProfileSetupStatus
-                                                          .business
+                                                  ProfileSetupStatus
+                                                      .business
                                                   ? ColorName.white
                                                   : ColorName.primaryColor,
                                             ),
@@ -183,28 +179,30 @@ class ProfileSetupScreen extends StatelessWidget {
                     Positioned(
                       left: 0,
                       top: 0,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: horizontalValue(16),
-                        ),
-                        width: sizes.width * 0.99999,
-                        height: sizes.heightRatio * 90,
-                        decoration: const BoxDecoration(
-                          color: Color(0xe5ffffff),
-                          borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(16),
-                            bottomLeft: Radius.circular(16),
+                      child: IntrinsicHeight(
+                        child: Container(
+                          padding: EdgeInsets.only(
+                            left: horizontalValue(16),
+                            right: horizontalValue(16),
+                            top: verticalValue(40),
+                            bottom: verticalValue(20),
                           ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Profile Setup',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: sizes.fontRatio * 20,
-                              fontWeight: FontWeight.w600,
-                              color: const Color(0xff25282b),
+                          width: sizes.width * 0.99999,
+                          decoration: const BoxDecoration(
+                            color: Color(0xe5ffffff),
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(16),
+                              bottomLeft: Radius.circular(16),
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Profile Setup',
+                              textAlign: TextAlign.center,
+                              style: textStyles.poppinsBold.copyWith(
+                                fontSize: sizes.fontRatio * 20,
+                                color: ColorName.blackShade,
+                              ),
                             ),
                           ),
                         ),
@@ -217,7 +215,7 @@ class ProfileSetupScreen extends StatelessWidget {
                 builder: (context, state) {
                   switch (state.status) {
                     case ProfileSetupStatus.personal:
-                      return const PersonalSetup();
+                      return PersonalSetup();
                     case ProfileSetupStatus.business:
                       return const BusinessSetup();
                     default:

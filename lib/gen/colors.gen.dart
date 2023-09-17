@@ -16,11 +16,17 @@ class ColorName {
   /// Color: #000000
   static const Color black = Color(0xFF000000);
 
+  /// Color: #25282B
+  static const Color blackShade = Color(0xFF25282B);
+
   /// Color: #4A4947
   static const Color greyShade1 = Color(0xFF4A4947);
 
   /// Color: #D6D8DA
   static const Color greyShade2 = Color(0xFFD6D8DA);
+
+  /// Color: #9f958b
+  static const Color hintTextShade = Color(0xFF9F958B);
 
   /// Color: #808361
   static const Color primaryColor = Color(0xFF808361);
@@ -30,6 +36,9 @@ class ColorName {
 
   /// Color: #B7A78E
   static const Color primaryColorShade1 = Color(0xFFB7A78E);
+
+  /// Color: #dddad2
+  static const Color textFieldShade = Color(0xFFDDDAD2);
 
   /// Color: #00000000
   static const Color transparentColor = Color(0x00000000);

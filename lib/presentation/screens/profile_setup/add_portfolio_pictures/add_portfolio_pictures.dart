@@ -67,47 +67,35 @@ class AddPortfolioPictures extends StatelessWidget {
                               children: [
                                 TextSpan(
                                   text: 'Showcase',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.white,
                                   ),
                                 ),
                                 TextSpan(
                                   text: ' ',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.white,
                                   ),
                                 ),
                                 TextSpan(
                                   text: 'your talent',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
                                     color: ColorName.primaryColor,
                                   ),
                                 ),
                                 TextSpan(
                                   text: ' ',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorName.white,
+                                    color: ColorName.primaryColor,
                                   ),
                                 ),
                                 TextSpan(
                                   text:
                                       'behind the lens by adding your portfolio...',
-                                  style: SafeGoogleFont(
-                                    'Poppins',
+                                  style: textStyles.poppinsRegular.copyWith(
                                     fontSize: sizes.fontRatio * 16,
-                                    fontWeight: FontWeight.w400,
                                     color: ColorName.white,
                                   ),
                                 ),
@@ -149,11 +137,9 @@ class AddPortfolioPictures extends StatelessWidget {
                             Text(
                               'Portfolio Setup',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Poppins',
+                              style: textStyles.poppinsBold.copyWith(
                                 fontSize: sizes.fontRatio * 20,
-                                fontWeight: FontWeight.w600,
-                                color: ColorName.black,
+                                color: ColorName.blackShade,
                               ),
                             ),
                             const Spacer(),
@@ -179,11 +165,9 @@ class AddPortfolioPictures extends StatelessWidget {
                       child: Text(
                         '0/30',
                         textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Quincy CF',
-                          fontSize: sizes.fontRatio * 20,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xff25282b),
+                        style: textStyles.quincyCFMedium.copyWith(
+                          fontSize: sizes.fontRatio * 16,
+                          color: ColorName.blackShade,
                         ),
                       ),
                     ),

@@ -59,7 +59,7 @@ class AppRoutes {
         );
       case register:
         return MaterialPageRoute(
-          builder: (_) => const RegisterScreen(),
+          builder: (_) => RegisterScreen(),
         );
       case login:
         return MaterialPageRoute(
